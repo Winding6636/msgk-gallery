@@ -12,6 +12,7 @@
 ## Contribution
 
 - `list.txt` にTwitter,pixiv,ニコニコ静画の"ページ"URLを示して[プルリク](https://github.com/Winding6636/msgk-gallery/pulls)投げてね♥
+- Github分かんねーよなひとは[ここのシート](https://docs.google.com/spreadsheets/d/1biU-FOV7fYUbG175YPpASWEXQardnpF4o2dhoRXSAig/edit#gid=644830573)にURLを入れておいてください。気づいたら入れます。
 
 ## License/Copyright
 
