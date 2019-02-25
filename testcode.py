@@ -2,9 +2,15 @@
 import urllib
 import urllib.request
 from urllib.parse import urlparse
+from requests_oauthlib import OAuthSession, OAuth
+import requests
+import json
 import sys
 #sys.tracebacklimit = 0
 
+setting = json.load(open("setting.json"))
+#twitter = OAuth1Session(CK, CS, AT, ATS) #認証処理
+    print (setting)
 with open("./list.txt", "r") as f:
     url = f.read().split("\n")
 urls = sorted(list(set(url)),key=url.index) # unique/sort
@@ -44,10 +50,13 @@ def url_decision(url):
         print("false")
 
 def get_tweet(url):
+    print ("twitter")
 
 def get_pixiv(url):
+    print ("pixiv")
 
 def get_seiga(url):
+    print ("seiga")
 
 for url in urls :
     print("-----------------")

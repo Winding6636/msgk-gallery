@@ -1,0 +1,11 @@
+{
+	"debug": false,
+	"Twitter_API":{
+		"CK":"CustomerKey",
+		"CS":"CustomerSecret",
+		"AT":"AccessToken",
+		"ATS":"AccessTokenSecret",
+		"Callback_URL":""
+	}
+	
+}
