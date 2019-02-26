@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://w3id.org/security/v1",
+    {
+      "manuallyApprovesFollowers": "as:manuallyApprovesFollowers",
+      "sensitive": "as:sensitive",
+      "movedTo": {
+        "@id": "as:movedTo",
+        "@type": "@id"
+      },
+      "alsoKnownAs": {
+        "@id": "as:alsoKnownAs",
+        "@type": "@id"
+      },
+      "Hashtag": "as:Hashtag",
+      "ostatus": "http://ostatus.org#",
+      "atomUri": "ostatus:atomUri",
+      "inReplyToAtomUri": "ostatus:inReplyToAtomUri",
+      "conversation": "ostatus:conversation",
+      "toot": "http://joinmastodon.org/ns#",
+      "Emoji": "toot:Emoji",
+      "focalPoint": {
+        "@container": "@list",
+        "@id": "toot:focalPoint"
+      },
+      "featured": {
+        "@id": "toot:featured",
+        "@type": "@id"
+      },
+      "schema": "http://schema.org#",
+      "PropertyValue": "schema:PropertyValue",
+      "value": "schema:value"
+    }
+  ],
+  "id": "https://mstdn.maud.io/users/nao/statuses/101294303587551260",
+  "type": "Note",
+  "summary": null,
+  "inReplyTo": null,
+  "published": "2018-12-24T05:13:31Z",
+  "url": "https://mstdn.maud.io/@nao/101294303587551260",
+  "attributedTo": "https://mstdn.maud.io/users/nao",
+  "to": [
+    "https://mstdn.maud.io/users/nao/followers"
+  ],
+  "cc": [
+    "https://www.w3.org/ns/activitystreams#Public"
+  ],
+  "sensitive": false,
+  "atomUri": "https://mstdn.maud.io/users/nao/statuses/101294303587551260",
+  "inReplyToAtomUri": null,
+  "conversation": "tag:mstdn.maud.io,2018-12-24:objectId=27132181:objectType=Conversation",
+  "content": "",
+  "attachment": [
+    {
+      "type": "Document",
+      "mediaType": "image/png",
+      "url": "https://mstdn.maud.io/system/media_attachments/files/002/689/094/original/b47bea9ea0cc1d72.png",
+      "name": null
+    }
+  ],
+  "tag": []
+}

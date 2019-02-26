@@ -6,6 +6,7 @@ from requests_oauthlib import OAuth1Session
 import requests
 import json
 import os
+from time import sleep
 
 with open('setting.json') as f:
     setting = json.load(f)
@@ -23,6 +24,7 @@ with open('./list.txt') as f:
         exit ()
 
 def response_check(url):
+    result = 0
     parsed_url = urlparse(url)
     if (parsed_url.scheme):
         try:
@@ -32,19 +34,45 @@ def response_check(url):
             return result,url,parsed_url
         except urllib.request.HTTPError:
             print('Not found:', url)
-            result = 0
             return result,url,parsed_url
             
     else:
         print("URLですらないです.... `"+url+"`")
-        result = 0
         return result,url,parsed_url
         
 
 def get_tweet(url):
+    code = 0
     print ("twitter")
+    tweet_id = ((parsed_url.path.split('status/',1))[1])
+    api = "https://api.twitter.com/1.1/statuses/show.json"
+    params = {'id': tweet_id,'tweet_mode':'extended','include_entities':True}
+    res = twitter.get(api, params = params)
+    res = json.loads(res.text)
+
+    ###
+    f = open("output.json", "w")
+    json.dump(res, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
     
-    print("fetching image "+attachment["url"]+" ...")
+    print(res['extended_entities']['media'][0]['type'])
+    print(res['created_at'])
+    print(res['extended_entities']['media'][0]['media_url_https'])
+    print(res['extended_entities']['media'][0]['sizes'])
+    ###
+
+    restype = (res['extended_entities']['media'][0]['type'])
+    resdata = (res['created_at'])
+    resimg = (res['extended_entities']['media'][0]['media_url_https'])
+
+    if (restype == "photo"):
+        #print("fetching image "+attachment["url"]+" ...")
+        jsonfile = url.replace("https://", "").replace("http://", "").replace("/", "_").replace("@", "") + ".json"
+        code = 1
+    else:
+        print ("NO Photo Image")
+        jsonfile = ""
+        
+    return code,res,jsonfile
 
 def get_pixiv(url):
     print ("pixiv")
@@ -76,7 +104,7 @@ for url in urls :
         print("fetching "+url+" ...")
         if (parsed_url.netloc == "twitter.com"):
             print("twitter")
-            #get_tweet(url)
+            code,res,jsonfile = get_tweet(url)
         elif (parsed_url.netloc == "www.pixiv.net"):
             print("pixiv")
             #get_pixiv(url)
@@ -85,8 +113,32 @@ for url in urls :
             #get_seiga(url)
     else:
         print("非対応のURLです。対象のURLか確認してください。 -h ", url)
+        continue
 
+    if not code == 1:
+        print("SKIP")
+        continue
+    cache_file_name = "cache/" + jsonfile
+#    if not os.path.exists(cache_file_name): #ファイル存在スルーをするかキャッシュとして
+        #print("fetching "+url+" ...")
+    with open(cache_file_name, "w") as f:
+        json.dump(res, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
+        print ("json save!")
+    sleep(1)
+    r = json.load(open(cache_file_name))
+    print ("json load!")
 
+    if (parsed_url.netloc == "twitter.com"):
+            print("twitter")
+            
+        elif (parsed_url.netloc == "www.pixiv.net"):
+            print("pixiv")
+            #get_pixiv(url)
+        elif (parsed_url.netloc == "seiga.nicovideo.jp"):
+            print("seiga")
+            #get_seiga(url)
+
+#json thumbimg origimg original date
 
 ##未実装未精査json->html書き出し
 from pyjade.parser import Parser

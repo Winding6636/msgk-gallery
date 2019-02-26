@@ -19,7 +19,7 @@ url = "https://api.twitter.com/1.1/statuses/show.json"
 #url = "https://api.twitter.com/1.1/statuses/user_timeline.json"
 
 #params = {'screen_name':'T_Winding','exclude_replies':True,'include_rts':False,'count':10}
-params = {'id': '1078598675369144321','tweet_mode':'extended','include_entities':True}
+params = {'id': '935671554523803648','tweet_mode':'extended','include_entities':True}
 #params = {'id': 1078598675369144321}
 # -RestVerb 'GET' -Parameters @{"id"="1078598675369144321";"tweet_mode"="extended";"include_entities"="true""
 
@@ -27,4 +27,19 @@ print(twitter)
 #result = twitter.post(url, params)
 res = twitter.get(url, params = params)
 res = json.loads(res.text)
-print (res['full_text'],res['full_text'])
+f = open("output.json", "w")
+json.dump(res, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
+#print (res)
+print(res['created_at'])
+print(res['extended_entities']['media'][0]['media_url_https'])
+print(res['extended_entities']['media'][0]['sizes'])
+
+
+tweeturl = "https://twitter.com/haguransan/status/1078598675369144321"
+parsed_url = urlparse(tweeturl)
+print (parsed_url.path)
+print ("status" in parsed_url.path)
+print (parsed_url.path.find('status/'))
+split_url = (parsed_url.path.split('status/',1))
+print (split_url[1])
+print(res['extended_entities']['media'][0]['type'])
