@@ -1,3 +1,4 @@
 Pillow
 pyjade
 requests
+requests_oauthlib

@@ -2,62 +2,44 @@
 import urllib
 import urllib.request
 from urllib.parse import urlparse
-from requests_oauthlib import OAuthSession, OAuth
+from requests_oauthlib import OAuth1Session
 import requests
 import json
-import sys
+import os
 
-setting = json.load(open("setting.json"))
+with open('setting.json') as f:
+    setting = json.load(f)
 
-if (setting['debug'] == 1):
-    print (':-: debug mode :-:')
-    sys.tracebacklimit = 0
+twitter = OAuth1Session(setting['Twitter_API']['CK'],setting['Twitter_API']['CS'],setting['Twitter_API']['AT'],setting['Twitter_API']['ATS'])
 
-#twitter = OAuth1Session(CK, CS, AT, ATS) #認証処理
-    print (setting)
-    print (sys.tracebacklimit)
-
-with open("./list.txt", "r") as f:
-    url = f.read().split("\n")
-urls = sorted(list(set(url)),key=url.index) # unique/sort
-
-#ENVCK
-def env_check():
-    print(hoge)
-    #各サイトチェック res
-    #TwitterAPI認証チェック
+with open('./list.txt') as f:
+    f.seek(0, os.SEEK_END)
+    if f.tell():
+        f.seek(0)
+        url = f.read().split("\n")
+        urls = sorted(list(set(url)),key=url.index) # unique/sort
+    else:
+        print ("list.txtが空です。")
+        exit ()
 
 def response_check(url):
-    try:
-        f = urllib.request.urlopen(url)
-        #print('OK:', url)
-        print('OK!')
-        f.close()
-        return url
-    except urllib.request.HTTPError:
-        print('Not found:', url)
-
-def url_decision(url):
-    url = response_check(url)
-    #判定
     parsed_url = urlparse(url)
-    #print (parsed_url.netloc)
-    
-    #アドレス判定 twitter/pixiv/seiga
-    if  (parsed_url.netloc == "twitter.com" or parsed_url.netloc == "www.pixiv.net" and parsed_url.path == "/member_illust.php" or parsed_url.netloc == "seiga.nicovideo.jp"):
-        print("true")
-        print("fetching "+url+" ...")
-        if (parsed_url.netloc == "twitter.com"):
-            print("twitter")
-            #get_tweet(url)
-        elif (parsed_url.netloc == "www.pixiv.net"):
-            print("pixiv")
-            #get_pixiv(url)
-        elif (parsed_url.netloc == "seiga.nicovideo.jp"):
-            print("seiga")
-            #get_seiga(url)
+    if (parsed_url.scheme):
+        try:
+            rc = urllib.request.urlopen(url)
+            result = 1
+            rc.close()
+            return result,url,parsed_url
+        except urllib.request.HTTPError:
+            print('Not found:', url)
+            result = 0
+            return result,url,parsed_url
+            
     else:
-        print("アドレス判定によりブロックされました。対象のURLか確認してください。 -h ", url)
+        print("URLですらないです.... `"+url+"`")
+        result = 0
+        return result,url,parsed_url
+        
 
 def get_tweet(url):
     print ("twitter")
@@ -84,7 +66,26 @@ def jsonmatome(result):
 
 for url in urls :
     print("-----------------")
-    url_decision(url)
+    #url_decision(url)
+
+    result,url,parsed_url = response_check(url)
+    if not result == 1:
+        continue   
+    #アドレス判定 twitter/pixiv/seiga
+    if  (parsed_url.netloc == "twitter.com" or parsed_url.netloc == "www.pixiv.net" and parsed_url.path == "/member_illust.php" or parsed_url.netloc == "seiga.nicovideo.jp"):
+        print("fetching "+url+" ...")
+        if (parsed_url.netloc == "twitter.com"):
+            print("twitter")
+            #get_tweet(url)
+        elif (parsed_url.netloc == "www.pixiv.net"):
+            print("pixiv")
+            #get_pixiv(url)
+        elif (parsed_url.netloc == "seiga.nicovideo.jp"):
+            print("seiga")
+            #get_seiga(url)
+    else:
+        print("非対応のURLです。対象のURLか確認してください。 -h ", url)
+
 
 
 ##未実装未精査json->html書き出し
@@ -98,10 +99,10 @@ def process(jade_string, context=None, **compiler_kwargs):
     with local_context_manager(compiler, ctx):
         return compiler.compile()
 
-with open("base.pug", "r") as f_pug:
-    html = process(f_pug.read(), {"akanes": akanes})
-    with open("index.html", "w") as f_html:
-        f_html.write(html)
-with open("list.json", "w") as f:
-    json.dump(akanes, f)
+#with open("base.pug", "r") as f_pug:
+#    html = process(f_pug.read(), {"akanes": akanes})
+#    with open("index.html", "w") as f_html:
+#        f_html.write(html)
+#with open("list.json", "w") as f:
+#    json.dump(akanes, f)
 
