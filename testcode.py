@@ -43,7 +43,7 @@ def response_check(url):
 
 def get_tweet(url):
     code = 0
-    print ("twitter")
+    print ("get_tweet")
     tweet_id = ((parsed_url.path.split('status/',1))[1])
     api = "https://api.twitter.com/1.1/statuses/show.json"
     params = {'id': tweet_id,'tweet_mode':'extended','include_entities':True}
@@ -61,27 +61,35 @@ def get_tweet(url):
     ###
 
     restype = (res['extended_entities']['media'][0]['type'])
-    resdata = (res['created_at'])
-    resimg = (res['extended_entities']['media'][0]['media_url_https'])
+    #resdata = (res['created_at'])
+    #resimg = (res['extended_entities']['media'][0]['media_url_https'])
 
     if (restype == "photo"):
         #print("fetching image "+attachment["url"]+" ...")
-        jsonfile = url.replace("https://", "").replace("http://", "").replace("/", "_").replace("@", "") + ".json"
+        fname = url.replace("https://", "").replace("http://", "").replace("/", "_").replace("@", "")
         code = 1
     else:
         print ("NO Photo Image")
-        jsonfile = ""
+        fname = ""
         
-    return code,res,jsonfile
+    return code,res,fname
 
 def get_pixiv(url):
-    print ("pixiv")
+    code = 0
+    print ("pixiv_get")
 
-    print("fetching image "+attachment["url"]+" ...")
+    #print("fetching image "+attachment["url"]+" ...")
+    res = ""
+    jsonfile = ""
+    return code,res,jsonfile
 
 def get_seiga(url):
-    print ("seiga")
-    print("fetching image "+attachment["url"]+" ...")
+    print ("seiga_get")
+    
+    #print("fetching image "+attachment["url"]+" ...")
+    res = ""
+    jsonfile = ""
+    return code,res,jsonfile
 
 def thumbdl(imgurl):
     #thumbダウンロード
@@ -103,14 +111,14 @@ for url in urls :
     if  (parsed_url.netloc == "twitter.com" or parsed_url.netloc == "www.pixiv.net" and parsed_url.path == "/member_illust.php" or parsed_url.netloc == "seiga.nicovideo.jp"):
         print("fetching "+url+" ...")
         if (parsed_url.netloc == "twitter.com"):
-            print("twitter")
-            code,res,jsonfile = get_tweet(url)
+            print("twitter.com")
+            code,res,fname = get_tweet(url)
         elif (parsed_url.netloc == "www.pixiv.net"):
-            print("pixiv")
-            #get_pixiv(url)
+            print("pixiv.net")
+            code,res,jsonfile = get_pixiv(url)
         elif (parsed_url.netloc == "seiga.nicovideo.jp"):
-            print("seiga")
-            #get_seiga(url)
+            print("seiga.nico")
+            code,res,jsonfile = get_seiga(url)
     else:
         print("非対応のURLです。対象のURLか確認してください。 -h ", url)
         continue
@@ -118,25 +126,40 @@ for url in urls :
     if not code == 1:
         print("SKIP")
         continue
-    cache_file_name = "cache/" + jsonfile
+    cache_file_name = "cache/" + fname +".json"
 #    if not os.path.exists(cache_file_name): #ファイル存在スルーをするかキャッシュとして
         #print("fetching "+url+" ...")
     with open(cache_file_name, "w") as f:
         json.dump(res, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
         print ("json save!")
     sleep(1)
-    r = json.load(open(cache_file_name))
+    jsonf = json.load(open(cache_file_name))
     print ("json load!")
+    
+    #print (jsonf)
 
-    if (parsed_url.netloc == "twitter.com"):
-            print("twitter")
-            
-        elif (parsed_url.netloc == "www.pixiv.net"):
-            print("pixiv")
-            #get_pixiv(url)
-        elif (parsed_url.netloc == "seiga.nicovideo.jp"):
-            print("seiga")
-            #get_seiga(url)
+    if (fname.startswith("twitter.com")):
+        print("jsonfile_twitter")
+        img_list = jsonf['extended_entities']['media']
+        for img_list in img_list:
+            img_url = img_list['media_url_https']
+            print (img_url)
+            thumb_url = img_url + ":small"
+            print (thumb_url)
+            img_url = urlparse(img_url)
+            print ((img_url.path).replace('/media/', ''))
+            print (fname)
+
+            print ("CreateData: " + jsonf['created_at']) #作成日時
+            print (img_list['expanded_url']) #ツイートURL
+
+
+    elif (fname.startswith("www.pixiv.net")):
+        print("jsonfile_pixiv")
+        #get_pixiv(url)
+    elif (fname.startswith("seiga.nicovideo.jp")):
+        print("jsonfile_seiga")
+        #get_seiga(url)
 
 #json thumbimg origimg original date
 
