@@ -7,11 +7,13 @@ import requests
 import json
 import os
 from time import sleep
+from datetime import datetime
 
 with open('setting.json') as f:
     setting = json.load(f)
 
 twitter = OAuth1Session(setting['Twitter_API']['CK'],setting['Twitter_API']['CS'],setting['Twitter_API']['AT'],setting['Twitter_API']['ATS'])
+msgks = []
 
 with open('./list.txt') as f:
     f.seek(0, os.SEEK_END)
@@ -150,9 +152,16 @@ for url in urls :
             print ((img_url.path).replace('/media/', ''))
             print (fname)
 
+            print ("ThumbName: " + fname.replace('status_', '') + "_" + (img_url.path).replace('/media/', '').replace('.*','_s.*'))
             print ("CreateData: " + jsonf['created_at']) #作成日時
-            print (img_list['expanded_url']) #ツイートURL
+            print ("URL: " + img_list['expanded_url']) #ツイートURL
 
+            msgks.append({
+                "original": img_list['expanded_url'],
+                "unix": datetime.strptime(jsonf['created_at'], "%a %b %d %H:%M:%S %z %Y").timestamp(),
+                "origimg": img_list['media_url_https'],
+                "thumbimg": thumb_url
+            })
 
     elif (fname.startswith("www.pixiv.net")):
         print("jsonfile_pixiv")
@@ -161,7 +170,12 @@ for url in urls :
         print("jsonfile_seiga")
         #get_seiga(url)
 
-#json thumbimg origimg original date
+
+    msgks = sorted(msgks, key=lambda x:x["unix"], reverse = True)
+    print (msgks)
+    f = open("result.json", "w")
+    json.dump(msgks, f, ensure_ascii=False, indent=4, separators=(',', ': '))
+    f.close()
 
 ##未実装未精査json->html書き出し
 from pyjade.parser import Parser
