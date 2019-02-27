@@ -1,182 +1,84 @@
 {
-    "contributors": null,
-    "coordinates": null,
-    "created_at": "Fri Dec 28 10:28:58 +0000 2018",
-    "display_text_range": [
-        0,
-        140
-    ],
-    "entities": {
-        "hashtags": [],
-        "media": [
-            {
-                "display_url": "pic.twitter.com/CNCQdMW2jv",
-                "expanded_url": "https://twitter.com/haguransan/status/1078598675369144321/photo/1",
-                "id": 1078598105149276160,
-                "id_str": "1078598105149276160",
-                "indices": [
-                    141,
-                    164
-                ],
-                "media_url": "http://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
-                "media_url_https": "https://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
-                "sizes": {
-                    "large": {
-                        "h": 2000,
-                        "resize": "fit",
-                        "w": 1200
-                    },
-                    "medium": {
-                        "h": 1200,
-                        "resize": "fit",
-                        "w": 720
-                    },
-                    "small": {
-                        "h": 680,
-                        "resize": "fit",
-                        "w": 408
-                    },
-                    "thumb": {
-                        "h": 150,
-                        "resize": "crop",
-                        "w": 150
-                    }
-                },
-                "type": "photo",
-                "url": "https://t.co/CNCQdMW2jv"
-            }
-        ],
-        "symbols": [],
-        "urls": [],
-        "user_mentions": [
-            {
-                "id": 883432249,
-                "id_str": "883432249",
-                "indices": [
-                    32,
-                    44
-                ],
-                "name": "MtU🎀肉⚡️",
-                "screen_name": "MtU17830715"
-            }
-        ]
-    },
-    "extended_entities": {
-        "media": [
-            {
-                "display_url": "pic.twitter.com/CNCQdMW2jv",
-                "expanded_url": "https://twitter.com/haguransan/status/1078598675369144321/photo/1",
-                "id": 1078598105149276160,
-                "id_str": "1078598105149276160",
-                "indices": [
-                    141,
-                    164
-                ],
-                "media_url": "http://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
-                "media_url_https": "https://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
-                "sizes": {
-                    "large": {
-                        "h": 2000,
-                        "resize": "fit",
-                        "w": 1200
-                    },
-                    "medium": {
-                        "h": 1200,
-                        "resize": "fit",
-                        "w": 720
-                    },
-                    "small": {
-                        "h": 680,
-                        "resize": "fit",
-                        "w": 408
-                    },
-                    "thumb": {
-                        "h": 150,
-                        "resize": "crop",
-                        "w": 150
-                    }
-                },
-                "type": "photo",
-                "url": "https://t.co/CNCQdMW2jv"
-            }
-        ]
-    },
-    "favorite_count": 1141,
-    "favorited": false,
-    "full_text": "そして今回から使用するメスガキ立ち絵ですがなんとあのMtU先生(@MtU17830715)に書いて貰いました！\nこの立ち絵は基本的にMtUさんの立ち絵と同じ位脱がす事が出来ます！\n利用規約もほぼ同じで加筆、加工可です！\n配布は2019年の1月1日に予定しています！沢山遊んでね！！ https://t.co/CNCQdMW2jv",
-    "geo": null,
-    "id": 1078598675369144321,
-    "id_str": "1078598675369144321",
-    "in_reply_to_screen_name": null,
-    "in_reply_to_status_id": null,
-    "in_reply_to_status_id_str": null,
-    "in_reply_to_user_id": null,
-    "in_reply_to_user_id_str": null,
-    "is_quote_status": false,
-    "lang": "ja",
-    "place": null,
-    "possibly_sensitive": false,
-    "possibly_sensitive_appealable": false,
-    "retweet_count": 469,
-    "retweeted": false,
-    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
-    "truncated": false,
-    "user": {
-        "contributors_enabled": false,
-        "created_at": "Fri Mar 14 14:13:52 +0000 2014",
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "欲しいものリストhttps://t.co/vKs8lhkUvF",
-        "entities": {
-            "description": {
-                "urls": [
+    "count": 1,
+    "response": [
+        {
+            "age_limit": "all-age",
+            "book_style": "none",
+            "caption": "はぐらんさんのところのメスガキちゃんです",
+            "content_type": null,
+            "created_time": "2016-08-07 19:17:49",
+            "favorite_id": 5183108552,
+            "height": 1122,
+            "id": 58305665,
+            "image_urls": {
+                "large": "https://i.pximg.net/img-original/img/2016/08/07/19/17/49/58305665_p0.png",
+                "medium": "https://i.pximg.net/c/600x600/img-master/img/2016/08/07/19/17/49/58305665_p0_master1200.jpg",
+                "px_128x128": "https://i.pximg.net/c/128x128/img-master/img/2016/08/07/19/17/49/58305665_p0_square1200.jpg",
+                "px_480mw": "https://i.pximg.net/c/480x960/img-master/img/2016/08/07/19/17/49/58305665_p0_master1200.jpg",
+                "small": "https://i.pximg.net/c/150x150/img-master/img/2016/08/07/19/17/49/58305665_p0_master1200.jpg"
+            },
+            "is_liked": false,
+            "is_manga": true,
+            "metadata": {
+                "pages": [
                     {
-                        "display_url": "amzn.asia/4xpJa9A",
-                        "expanded_url": "http://amzn.asia/4xpJa9A",
-                        "indices": [
-                            8,
-                            31
-                        ],
-                        "url": "https://t.co/vKs8lhkUvF"
+                        "image_urls": {
+                            "large": "https://i.pximg.net/img-original/img/2016/08/07/19/17/49/58305665_p0.png",
+                            "medium": "https://i.pximg.net/img-master/img/2016/08/07/19/17/49/58305665_p0_master1200.jpg",
+                            "px_128x128": "https://i.pximg.net/c/128x128/img-master/img/2016/08/07/19/17/49/58305665_p0_square1200.jpg",
+                            "px_480mw": "https://i.pximg.net/c/480x960/img-master/img/2016/08/07/19/17/49/58305665_p0_master1200.jpg"
+                        }
+                    },
+                    {
+                        "image_urls": {
+                            "large": "https://i.pximg.net/img-original/img/2016/08/07/19/17/49/58305665_p1.png",
+                            "medium": "https://i.pximg.net/img-master/img/2016/08/07/19/17/49/58305665_p1_master1200.jpg",
+                            "px_128x128": "https://i.pximg.net/c/128x128/img-master/img/2016/08/07/19/17/49/58305665_p1_square1200.jpg",
+                            "px_480mw": "https://i.pximg.net/c/480x960/img-master/img/2016/08/07/19/17/49/58305665_p1_master1200.jpg"
+                        }
                     }
                 ]
-            }
-        },
-        "favourites_count": 2107,
-        "follow_request_sent": false,
-        "followers_count": 8696,
-        "following": true,
-        "friends_count": 724,
-        "geo_enabled": true,
-        "has_extended_profile": true,
-        "id": 2389163760,
-        "id_str": "2389163760",
-        "is_translation_enabled": false,
-        "is_translator": false,
-        "lang": "ja",
-        "listed_count": 123,
-        "location": "",
-        "name": "はぐらん",
-        "notifications": false,
-        "profile_background_color": "709397",
-        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme6/bg.gif",
-        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme6/bg.gif",
-        "profile_background_tile": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2389163760/1540807725",
-        "profile_image_url": "http://pbs.twimg.com/profile_images/1052463432534904832/JpoaKKEr_normal.jpg",
-        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1052463432534904832/JpoaKKEr_normal.jpg",
-        "profile_link_color": "3B94D9",
-        "profile_sidebar_border_color": "000000",
-        "profile_sidebar_fill_color": "A0C5C7",
-        "profile_text_color": "333333",
-        "profile_use_background_image": true,
-        "protected": false,
-        "screen_name": "haguransan",
-        "statuses_count": 29612,
-        "time_zone": null,
-        "translator_type": "none",
-        "url": null,
-        "utc_offset": null,
-        "verified": false
-    }
+            },
+            "page_count": 2,
+            "publicity": 0,
+            "reuploaded_time": "2016-08-07 19:17:49",
+            "sanity_level": "white",
+            "stats": {
+                "commented_count": 25,
+                "favorited_count": {
+                    "private": 115,
+                    "public": 3149
+                },
+                "score": 34626,
+                "scored_count": 3470,
+                "views_count": 55865
+            },
+            "tags": [
+                "メスガキ",
+                "よその子",
+                "1発108円(税込)",
+                "創作",
+                "オリジナル3000users入り"
+            ],
+            "title": "メスガキちゃん",
+            "tools": [],
+            "type": "illustration",
+            "user": {
+                "account": "otokuyou126a",
+                "id": 7609394,
+                "is_follower": false,
+                "is_following": true,
+                "is_friend": false,
+                "is_premium": null,
+                "name": "お徳用",
+                "profile": null,
+                "profile_image_urls": {
+                    "px_50x50": "https://i.pximg.net/user-profile/img/2016/11/08/23/32/10/11726953_1599d9ebf43a974278a26e50143ac501_50.jpg"
+                },
+                "stats": null
+            },
+            "width": 800
+        }
+    ],
+    "status": "success"
 }

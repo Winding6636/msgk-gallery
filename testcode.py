@@ -10,12 +10,16 @@ from io import BytesIO
 import os
 from time import sleep
 from datetime import datetime
+from pixivpy3 import *
 
 with open('setting.json') as f:
     setting = json.load(f)
 
-twitter = OAuth1Session(setting['Twitter_API']['CK'],setting['Twitter_API']['CS'],setting['Twitter_API']['AT'],setting['Twitter_API']['ATS'])
 msgks = []
+twitter = OAuth1Session(setting['Twitter_API']['CK'],setting['Twitter_API']['CS'],setting['Twitter_API']['AT'],setting['Twitter_API']['ATS'])
+pixivapi = PixivAPI()
+pixivapi.login( setting['Pixiv_API']['UserName'], setting['Pixiv_API']['Password'] )
+pixivapp = AppPixivAPI()
 
 with open('./list.txt') as f:
     f.seek(0, os.SEEK_END)
@@ -80,11 +84,22 @@ def get_tweet(url):
 def get_pixiv(url):
     code = 0
     #print ("pixiv_get")
+    illustid = int((parsed_url.query.split('illust_id=',1))[1])
+    json_result = pixivapi.works(illustid)
+    #print("-----------------------------\n" + str(json_result) + "\n-----------------------------")
+    illust = json_result.response[0]
+    f = open("output.json", "w")
+    json.dump(json_result, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
+    print( ">>> %s, origin url: %s \n-----------------------------" % (illust.caption, illust.image_urls['large']))
 
-    #print("fetching image "+attachment["url"]+" ...")
-    res = ""
-    jsonfile = ""
-    return code,res,jsonfile
+    if (illust.type == "illustration"):
+        code = 1
+        fname = url.replace("https://", "").replace("http://", "").replace("/", "_").replace("member_illust.php?mode=medium&", "")
+    else:
+        print (":-: 非対応です。 :-:")
+        fname = ""
+
+    return code,illust,fname
 
 def get_seiga(url):
     #print ("seiga_get")
@@ -110,7 +125,7 @@ for url in urls :
             code,res,fname = get_tweet(url)
         elif (parsed_url.netloc == "www.pixiv.net"):
             print(":-: Switch pixiv.net :-:")
-            code,res,jsonfile = get_pixiv(url)
+            code,res,fname = get_pixiv(url)
         elif (parsed_url.netloc == "seiga.nicovideo.jp"):
             print(":-: Switch seiga.nico:-:")
             code,res,jsonfile = get_seiga(url)
@@ -167,6 +182,8 @@ for url in urls :
     elif (fname.startswith("www.pixiv.net")):
         print("jsonfile_pixiv")
         #get_pixiv(url)
+        
+
     elif (fname.startswith("seiga.nicovideo.jp")):
         print("jsonfile_seiga")
         #get_seiga(url)

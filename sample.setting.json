@@ -6,6 +6,10 @@
 		"AT":"AccessToken",
 		"ATS":"AccessTokenSecret",
 		"Callback_URL":""
+	},
+	"Pixiv_API":{
+		"UserName": "MailorPixivID",
+		"Password": "PixivPassword"
 	}
 	
 }
