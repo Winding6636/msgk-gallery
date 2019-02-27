@@ -175,10 +175,10 @@ for url in urls :
     #print ("---------------------------")
     for dl in dl:
         if not os.path.exists("img/thumbnail/"+ dl['dlfilename']):
-            print("fetching image "+url+" ...")
+            path = "img/thumbnail/"+dl['dlfilename']
+            print("fetching image "+path+" ...")
             #print(dl['dl_url'])
             #print(dl['dlfilename'])
-            path = "img/thumbnail/"+dl['dlfilename']
             dl_res = requests.get(dl['dl_url'])
             #dl_res.raise_for_status()
             sleep(1)
