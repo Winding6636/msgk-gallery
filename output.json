@@ -1,40 +1,40 @@
 {
     "contributors": null,
     "coordinates": null,
-    "created_at": "Wed Nov 29 00:47:37 +0000 2017",
+    "created_at": "Fri Dec 28 10:28:58 +0000 2018",
     "display_text_range": [
         0,
-        8
+        140
     ],
     "entities": {
         "hashtags": [],
         "media": [
             {
-                "display_url": "pic.twitter.com/GQAoGC4WUW",
-                "expanded_url": "https://twitter.com/T_Winding/status/935671554523803648/video/1",
-                "id": 935671415935664128,
-                "id_str": "935671415935664128",
+                "display_url": "pic.twitter.com/CNCQdMW2jv",
+                "expanded_url": "https://twitter.com/haguransan/status/1078598675369144321/photo/1",
+                "id": 1078598105149276160,
+                "id_str": "1078598105149276160",
                 "indices": [
-                    9,
-                    32
+                    141,
+                    164
                 ],
-                "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/935671415935664128/pu/img/6W4HDYV-RUfo1oSP.jpg",
-                "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/935671415935664128/pu/img/6W4HDYV-RUfo1oSP.jpg",
+                "media_url": "http://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
                 "sizes": {
                     "large": {
-                        "h": 720,
-                        "resize": "fit",
-                        "w": 1280
-                    },
-                    "medium": {
-                        "h": 675,
+                        "h": 2000,
                         "resize": "fit",
                         "w": 1200
                     },
-                    "small": {
-                        "h": 383,
+                    "medium": {
+                        "h": 1200,
                         "resize": "fit",
-                        "w": 680
+                        "w": 720
+                    },
+                    "small": {
+                        "h": 680,
+                        "resize": "fit",
+                        "w": 408
                     },
                     "thumb": {
                         "h": 150,
@@ -43,44 +43,52 @@
                     }
                 },
                 "type": "photo",
-                "url": "https://t.co/GQAoGC4WUW"
+                "url": "https://t.co/CNCQdMW2jv"
             }
         ],
         "symbols": [],
         "urls": [],
-        "user_mentions": []
+        "user_mentions": [
+            {
+                "id": 883432249,
+                "id_str": "883432249",
+                "indices": [
+                    32,
+                    44
+                ],
+                "name": "MtU🎀肉⚡️",
+                "screen_name": "MtU17830715"
+            }
+        ]
     },
     "extended_entities": {
         "media": [
             {
-                "additional_media_info": {
-                    "monetizable": false
-                },
-                "display_url": "pic.twitter.com/GQAoGC4WUW",
-                "expanded_url": "https://twitter.com/T_Winding/status/935671554523803648/video/1",
-                "id": 935671415935664128,
-                "id_str": "935671415935664128",
+                "display_url": "pic.twitter.com/CNCQdMW2jv",
+                "expanded_url": "https://twitter.com/haguransan/status/1078598675369144321/photo/1",
+                "id": 1078598105149276160,
+                "id_str": "1078598105149276160",
                 "indices": [
-                    9,
-                    32
+                    141,
+                    164
                 ],
-                "media_url": "http://pbs.twimg.com/ext_tw_video_thumb/935671415935664128/pu/img/6W4HDYV-RUfo1oSP.jpg",
-                "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/935671415935664128/pu/img/6W4HDYV-RUfo1oSP.jpg",
+                "media_url": "http://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DvfzQxDVAAAIDgs.jpg",
                 "sizes": {
                     "large": {
-                        "h": 720,
-                        "resize": "fit",
-                        "w": 1280
-                    },
-                    "medium": {
-                        "h": 675,
+                        "h": 2000,
                         "resize": "fit",
                         "w": 1200
                     },
-                    "small": {
-                        "h": 383,
+                    "medium": {
+                        "h": 1200,
                         "resize": "fit",
-                        "w": 680
+                        "w": 720
+                    },
+                    "small": {
+                        "h": 680,
+                        "resize": "fit",
+                        "w": 408
                     },
                     "thumb": {
                         "h": 150,
@@ -88,45 +96,17 @@
                         "w": 150
                     }
                 },
-                "type": "video",
-                "url": "https://t.co/GQAoGC4WUW",
-                "video_info": {
-                    "aspect_ratio": [
-                        16,
-                        9
-                    ],
-                    "duration_millis": 13534,
-                    "variants": [
-                        {
-                            "content_type": "application/x-mpegURL",
-                            "url": "https://video.twimg.com/ext_tw_video/935671415935664128/pu/pl/4yIoGNjxPGA82OTy.m3u8"
-                        },
-                        {
-                            "bitrate": 2176000,
-                            "content_type": "video/mp4",
-                            "url": "https://video.twimg.com/ext_tw_video/935671415935664128/pu/vid/1280x720/Z_6au83VYz2yYxsl.mp4"
-                        },
-                        {
-                            "bitrate": 256000,
-                            "content_type": "video/mp4",
-                            "url": "https://video.twimg.com/ext_tw_video/935671415935664128/pu/vid/320x180/zmztGw3A8WR8CCsq.mp4"
-                        },
-                        {
-                            "bitrate": 832000,
-                            "content_type": "video/mp4",
-                            "url": "https://video.twimg.com/ext_tw_video/935671415935664128/pu/vid/640x360/waVEMIhDcIgHL2kV.mp4"
-                        }
-                    ]
-                }
+                "type": "photo",
+                "url": "https://t.co/CNCQdMW2jv"
             }
         ]
     },
-    "favorite_count": 0,
+    "favorite_count": 1141,
     "favorited": false,
-    "full_text": "無限ループで笑う https://t.co/GQAoGC4WUW",
+    "full_text": "そして今回から使用するメスガキ立ち絵ですがなんとあのMtU先生(@MtU17830715)に書いて貰いました！\nこの立ち絵は基本的にMtUさんの立ち絵と同じ位脱がす事が出来ます！\n利用規約もほぼ同じで加筆、加工可です！\n配布は2019年の1月1日に予定しています！沢山遊んでね！！ https://t.co/CNCQdMW2jv",
     "geo": null,
-    "id": 935671554523803648,
-    "id_str": "935671554523803648",
+    "id": 1078598675369144321,
+    "id_str": "1078598675369144321",
     "in_reply_to_screen_name": null,
     "in_reply_to_status_id": null,
     "in_reply_to_status_id_str": null,
@@ -137,52 +117,62 @@
     "place": null,
     "possibly_sensitive": false,
     "possibly_sensitive_appealable": false,
-    "retweet_count": 0,
+    "retweet_count": 469,
     "retweeted": false,
     "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
     "truncated": false,
     "user": {
         "contributors_enabled": false,
-        "created_at": "Sat Apr 05 15:30:48 +0000 2014",
+        "created_at": "Fri Mar 14 14:13:52 +0000 2014",
         "default_profile": false,
         "default_profile_image": false,
-        "description": ":⋅: じ ゅ う ぶ ん な 、は ず だ っ た 。:⋅:\n:: どっかに属してるようでない浮浪人 ::\n:⋅: 一 人 で じ ゅ う ぶ ん で す よ 。 :-:\n:⋅: 自分が何かデキるとは思わない事だ。 :⋅:\n:-: 問答無用で二次元RTするぞ👊 :-:",
+        "description": "欲しいものリストhttps://t.co/vKs8lhkUvF",
         "entities": {
             "description": {
-                "urls": []
+                "urls": [
+                    {
+                        "display_url": "amzn.asia/4xpJa9A",
+                        "expanded_url": "http://amzn.asia/4xpJa9A",
+                        "indices": [
+                            8,
+                            31
+                        ],
+                        "url": "https://t.co/vKs8lhkUvF"
+                    }
+                ]
             }
         },
-        "favourites_count": 120157,
+        "favourites_count": 2107,
         "follow_request_sent": false,
-        "followers_count": 576,
-        "following": false,
-        "friends_count": 548,
+        "followers_count": 8696,
+        "following": true,
+        "friends_count": 724,
         "geo_enabled": true,
         "has_extended_profile": true,
-        "id": 2429072142,
-        "id_str": "2429072142",
+        "id": 2389163760,
+        "id_str": "2389163760",
         "is_translation_enabled": false,
         "is_translator": false,
         "lang": "ja",
-        "listed_count": 33,
-        "location": ":⋅:猫天WORKS:⋅:81777943676643328",
-        "name": "Winding.of_General",
+        "listed_count": 123,
+        "location": "",
+        "name": "はぐらん",
         "notifications": false,
-        "profile_background_color": "C0DEED",
-        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-        "profile_background_tile": true,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2429072142/1540725777",
-        "profile_image_url": "http://pbs.twimg.com/profile_images/898125927745331201/ZYT-EU0Q_normal.png",
-        "profile_image_url_https": "https://pbs.twimg.com/profile_images/898125927745331201/ZYT-EU0Q_normal.png",
-        "profile_link_color": "0084B4",
-        "profile_sidebar_border_color": "FFFFFF",
-        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_background_color": "709397",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2389163760/1540807725",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1052463432534904832/JpoaKKEr_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1052463432534904832/JpoaKKEr_normal.jpg",
+        "profile_link_color": "3B94D9",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "A0C5C7",
         "profile_text_color": "333333",
         "profile_use_background_image": true,
         "protected": false,
-        "screen_name": "T_Winding",
-        "statuses_count": 150251,
+        "screen_name": "haguransan",
+        "statuses_count": 29612,
         "time_zone": null,
         "translator_type": "none",
         "url": null,

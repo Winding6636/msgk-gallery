@@ -43,3 +43,15 @@ print (parsed_url.path.find('status/'))
 split_url = (parsed_url.path.split('status/',1))
 print (split_url[1])
 print(res['extended_entities']['media'][0]['type'])
+#print ("----------------------")
+#print(res['extended_entities']['media'][0]['media_url_https'])
+#print(res['extended_entities']['media'][1]['media_url_https'])
+#print(res['extended_entities']['media'][2]['media_url_https'])
+#print(res['extended_entities']['media'][3]['media_url_https'])
+print ("----------------------")
+#print (res['extended_entities']['media'][]['media_url_https'])
+
+img_list = res['extended_entities']['media']
+for imgdl in img_list:
+    img_url = imgdl['media_url_https']
+    print (img_url)
