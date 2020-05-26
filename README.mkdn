@@ -26,6 +26,4 @@
 
 - [@hota@mstdn.maud.io](https://mstdn.maud.io/@hota)
 
-(**
-テスト
-*)
+<!-- ttete -->
